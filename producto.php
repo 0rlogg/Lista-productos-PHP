@@ -1,6 +1,5 @@
 <?php
 
-
 spl_autoload_register(function ($clase) {
     require("$clase.php");
 });
@@ -22,7 +21,9 @@ if (isset($_POST['actualizar'])) {
     $resultado = $conexion->modificar_datos($nombre, $nombre_corto, $descripcion, $pvp, $cod);
     $producto = $conexion->obtener_producto($codigo);
 }
+
 ?>
+
 
 <!doctype html>
 <html lang="en">
@@ -32,7 +33,9 @@ if (isset($_POST['actualizar'])) {
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Edición productos</title>
+
     <style>
+
         input[type=text], select {
             width: 100%;
             padding: 12px 20px;
@@ -63,13 +66,16 @@ if (isset($_POST['actualizar'])) {
             background-color: #f2f2f2;
             padding: 20px;
         }
+
     </style>
+
 </head>
 <body>
 <div>
 
 <form name="edicionproducto" action="index.php" method="post">
 <h1>Datos del producto</h1>
+
     <label for="codigo">Codigo : </label>
 <input type="text" name="codigo" value="<?php echo $producto['cod'] ?>" id="" ><br />
     <label for="codigo">Nombre :  </label>
